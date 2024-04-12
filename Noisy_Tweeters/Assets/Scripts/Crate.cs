@@ -12,5 +12,10 @@ public class Crate : MonoBehaviour
             var clip = _clips[UnityEngine.Random.Range(0, _clips.Length)];
             GetComponent<AudioSource>().PlayOneShot(clip);
         }
+
+        if (collision.relativeVelocity.magnitude > 8f)
+        {
+            gameObject.SetActive(false);
+        }
     }
 }
